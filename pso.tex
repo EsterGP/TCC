@@ -1,0 +1,45 @@
+%================================================================
+\chapter{PSO}
+%================================================================
+
+Um grande estímulo no desenvolvimento de algoritmos é o projeto de algoritmos para resolver problemas cada vez mais complexos. Grande sucesso tem sido alcançado na modelagem de inteligência biológica e natural, resultando nos chamados sistemas inteligentes. Esses algoritmos inteligentes incluem:
+
+\begin{itemize}
+    \item redes neurais artificiais (sistemas neurais biológicos)
+    \item computação evolucionária (evolução natural)
+    \item inteligência coletiva (comportamento social de organismos)
+    \item sistemas imunológicos artificiais (o sistema imunológico humano)
+    \item sistemas nebulosos (interação de organismos com o meio ambiente)
+\end{itemize}
+
+Inteligência pode ser definida como a habilidade de compreender a partir da experiência, interpretar inteligência, tendo a capacidade para pensamento e razão, especialmente em alto nível, incluindo criatividade, consciência, emoção e intuição. Enquanto tem-se obtido sucesso na modelagem de pequenas partes de sistemas neurais biológicos, ainda não há solução para o problema complexo de modelar intuição, consciência e emoção, que são partes integrantes da inteligência humana.
+
+Inteligência computacional \cite{bib:engelbrecht2007} pode ser vista como um ramo da Inteligência Artificial que estuda os mecanismos adaptativos para permitir ou facilitar um comportamento inteligente em ambientes complexos ou mutáveis. Inteligência Coletiva (\textit{Swarm Intelligence} - SW) tem sua origem no estudo de colônias ou enxames de organismos sociais. Otimização por exame de partículas (\textit{Particle Swarm Optimization} – PSO) \cite{bib:kennedyeberhart1995} é um dos exemplos de estratégias de inteligência coletiva, inspirada em bando de aves em busca por alimento.
+
+PSO é um procedimento de busca baseado em população, onde os indivíduos, referidos como partículas, são agrupados em um enxame e cada partícula representa uma solução candidata ao problema de otimização. Em um PSO, cada partícula é lançada pelo espaço de busca multidimensional, ajustando sua posição de acordo com sua experiência e a das partículas vizinhas, fazendo uso da melhor posição por ela encontrada e da melhor posição encontrada pelas vizinhas para se movimentar na direção da solução ótima. O desempenho de cada partícula é medido de acordo com uma função de aptidão prédefinida, que está relacionada ao problema a ser resolvido. Cada partícula atualiza sua posição adicionando frações de três deslocamento:
+
+\begin{itemize}
+    \item uma fração do deslocamento na mesma direção que estava seguindo no passo anterior;
+    \item uma fração do deslocamento na direção da posição onde registrou o melhor desempenho até o momento;
+    \item uma fração do deslocamento na direção da posição da vizinha com o melhor desempenho no momento.
+\end{itemize}
+
+No algoritmo denominado Global Best (Gbest), a vizinhança de cada partícula é formada por todas as demais partículas do enxame.
+
+\begin{verbatim}
+Algoritmo Global Best PSO
+    Crie e inicialize um exame com n partículas;
+    Repita
+        para i := 1 a n faça
+            Calcule a aptidão da partícula;
+            se aptidãoi <= pbesti então
+                Atualize pbest com a nova posição da partícula;
+            se pbesti <= gbest então
+                Atualize gbest com a nova posição;
+                Atualize a velocidade da partícula;
+                Atualize a posição da partícula;
+    até Condição de parada;
+    Retorne Melhor resultado.
+\end{verbatim}
+
+Gráficos para ilustrar

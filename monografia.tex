@@ -1,0 +1,503 @@
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+% Modelo de Trabalho Acadêmico utilizando classe repUERJ para
+% elaboração de teses, dissertação e trabalhos monográficos em
+% geral.
+%
+% Este arquivo está editado na codificação de caracteres UTF-8.
+%
+% As referencia estão baseadas no modelo bibtex e citação em
+% autor-data
+%
+% Este modelo foi criado por 
+% 	Dr. Luís Fernando de Oliveira
+% 	Professor Adjunto do Dep. de Física Aplicada e Termodinâmica
+% 	Instituto de Física Armando Dias Tavares
+% 	Universidade do Estado do Rio de Janeiro - UERJ
+%
+% A classe repUERJ.cls foi criada a partir do código original 
+% disponibilizado pelo grupo CódigoLivre (coordenado por
+% Gerald Weber). Foram feitas adequações para implementação das 
+% normas de elaboração de teses e dissertações da UERJ.
+%
+% Os estilos repUERJformat.sty codificam os elementos
+% pré-textuais e pós-textuais.
+%
+% O estilo repUERJpseudocode.sty codifica a elaboração de
+% algoritmos utilizando um glossário desenvolvido por mim 
+% (Luís Fernando), o mesmo usado em meu curso de Física
+% Computacional.
+%
+% Todo este material está disponível também no meu site
+%      http://sites.google.com/site/deoliveiralf
+%
+% As normas da UERJ para elaboração de teses e dissertações 
+% pode ser obtidas no documento disponível no site
+%      http://www.bdtd.uerj.br/roteiro_uerj_web.pdf
+%
+% Agradecimentos ao NPROTEC/Rede Sirius/UERJ e à Biblioteca
+% Setorial da Física.
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+%
+\documentclass[a4paper,12pt,oneside,onecolumn,final,fleqn]{repUERJ}
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage[brazil]{babel}  % adequação para o português Brasil
+\usepackage[utf8]{inputenc} % Determina a codificação utilizada
+                            % (conversão automática dos acentos)
+\usepackage{makeidx}        % Cria o índice
+\usepackage{hyperref}       % Controla a formação do índice
+\usepackage{indentfirst}    % Indenta o primeiro paragrafo de
+                            % cada seção.
+\usepackage{graphicx}       % Inclusão de gráficos
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb}  % pacotes matemáticos
+\usepackage[alf]{abntex2cite} % pacote para citacoes autor-data
+% \usepackage[num]{abntex2cite} % pacote para citacoes com numeracao
+% \citebrackets[]
+
+\usepackage[font=default,frame=no]{repUERJformat} % pacote para as 
+                                                  % normas da UERJ
+% ---
+% pacote auxiliar para elaboração de pseudocódigos
+% este pacote pode ser retirado caso nao se planeje
+% elaborar pseudocódigos
+% ---
+\usepackage[dots=yes]{repUERJpseudocode}
+
+\usepackage[maxfloats=25]{morefloats}
+\usepackage{array}
+\setlength\extrarowheight{2pt}
+
+% ----------------------------------------------------------------
+% Este trecho de comandos pode ser apagado
+% ----------------------------------------------------------------
+\usepackage[brazilian,hyperpageref]{backref}
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+\ifcase #1 %
+Nenhuma citação no texto.%
+\or
+Citado na página #2.%
+\else
+Citado #1 vezes nas páginas #2.%
+\fi}%
+% ----------------------------------------------------------------
+% ----------------------------------------------------------------
+
+
+% ***************************************************************
+% Informações de autoria e institucionais
+% ***************************************************************
+
+%----------------------------------------------------------------
+% Imagens pretextuais (precisam estar no mesmo diretório deste arquivo .tex)
+%----------------------------------------------------------------
+
+\logo{imagens/logo_uerj_cinza.png}
+\marcadagua{imagens/marcadagua_uerj_cinza.png}{1}{160}{255}
+
+%----------------------------------------------------------------
+% Informações da instituição
+%----------------------------------------------------------------
+
+\instituicao{Universidade do Estado do Rio de Janeiro}
+            {Centro de Tecnologia e Ciências}  
+            {Faculdade de Tecnologia}
+            {Departamento de Engenharia de Sistemas e Computação}
+
+%----------------------------------------------------------------
+% Informações da autoria do documento
+%----------------------------------------------------------------
+
+% \oautor{Nóme}{Sóbrenome}
+%       {Iniciais do nome} % iniciais do nome
+
+\autor{Ester Gomes}{Pais}
+      {E.G.} % iniciais do nome
+
+\titulo{Implementação Paralela do Algoritmo PSO em uma Plataforma baseada em NoC}
+\title{Título do trabalho em inglês}
+
+% se não for usar a quarta palavra chave, deixar o campo vazio: {}
+\palavraschaves{PSO}
+               {Rede intrachip}
+               {MPSoC}
+               {Quarta palavra-chave (opcional) ou vazio}
+
+\keywords{First keyword}
+         {Second keyword}
+         {Third keyword}
+         {Fourth keyword or empty}
+
+\orientador{Profª Ph.D.} 
+           {Luiza}{de Macedo Mourelle} 
+           {Unidade -- UERJ} 
+
+\coorientador{Profª Ph.D.} 
+             {Nadia}{Nedjah} 
+             {Unidade -- Instituição} 
+
+%----------------------------------------------------------------
+% Grau pretendido (Doutor, Mestre, Bacharel, Licenciado) e Curso
+%----------------------------------------------------------------
+
+\grau{Bacharel} % Doutor, Mestre, Bacharel, Licenciado
+\curso{Engenharia Elétrica com ênfase em Sistemas e Computação}
+%\areadeconcentracao{com ênfase em Sistemas e Computação} % opcional
+
+%----------------------------------------------------------------
+% Informações adicionais (local, data e paginas)
+%----------------------------------------------------------------
+
+\local{Rio de Janeiro} 
+\data{dd}{05}{2022} 
+
+% ***************************************************************
+% Configurações de aparência do PDF final
+% ***************************************************************
+
+% alterando o aspecto da cor azul
+%\definecolor{blue}{RGB}{41,5,195}
+%\definecolor{apricot}{RGB}{251,206,177}
+
+% informações do PDF
+\hypersetup{
+  unicode=false,
+  pdftitle={\UERJtitulo},
+  pdfauthor={\UERJautor},
+  pdfsubject={\UERJpreambulo},
+  pdfkeywords={PALAVRAS-CHAVES:}{ \chaveA}{ \chaveB}{ \chaveC}{ \chaveD},
+  pdfproducer={\packagename}, % producer of the document
+  colorlinks=true,   % false: boxed links; true: colored links
+  linkcolor=black,   % color of internal links blue
+  citecolor=black,   % color of links to bibliography blue
+  filecolor=black,   % color of file links magenta
+  urlcolor=black,
+  bookmarksdepth=4,
+%   backref=true,
+%   pagebackref=true,
+%   bookmarks=true,
+}
+
+% ***************************************************************
+% Índice remissivo
+% ***************************************************************
+%
+%\makeindex % compila o índice; se não for usar, comentar
+%
+% ***************************************************************
+% Fim do preâmbulo
+% ***************************************************************
+
+%/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+\begin{document}
+%/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+% ELEMENTOS PRE-TEXTUAIS
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\frontmatter % inicia a área dos elementos pré-textuais
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+% ----------------------------------------------------------
+% Capa e a folha de rosto
+% ----------------------------------------------------------
+%
+\capa
+\folhaderosto
+%
+% ----------------------------------------------------------
+% Inserir a ficha catalográfica
+% ----------------------------------------------------------
+% ---
+% A biblioteca deverá providenciar a ficha catalográfica. 
+% Salve a ficha no formato PDF. Use o nome do arquivo PDF 
+% como argumento do comando. 
+% Exemplo: ficha catalográfica no arquivo 'ficha.pdf'
+%     \fichacatalografica{ficha.pdf}
+%
+% Enquanto não possuir a ficha catalográfica, use o comando sem
+% argumentos.
+% ---
+%
+\fichacatalografica{}
+%
+% ----------------------------------------------------------
+% Folha de aprovação
+% ----------------------------------------------------------
+%
+\begin{folhadeaprovacao}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+  \assinatura{Cargo Título Nome Completo}
+             {\UERJunidade \UERJunidadenome\ -- UERJ}
+\end{folhadeaprovacao}
+%
+% ----------------------------------------------------------
+% Dedicatória
+% ----------------------------------------------------------
+%
+\pretextualchapter{Dedicatória}
+\vfill
+Texto da dedicatória (opcional).
+%
+% ----------------------------------------------------------
+% Agradecimentos
+% ----------------------------------------------------------
+%
+\pretextualchapter{Agradecimentos}
+
+Texto de agradecimento (opcional).
+%
+% ----------------------------------------------------------
+% Epigrafe (opcional)
+% ----------------------------------------------------------
+%
+%\begin{epigrafeonline}
+%\hfill Texto da epígrafe \textit{in locu} (opcional).\\
+%\hspace*{\fill}\textit{Autor}\\
+%\end{epigrafeonline}
+
+\pretextualchapter{Epígrafe}
+  \vfill
+  \begin{flushright}
+ "Até aqui nos ajudou o Senhor"\\    
+    \textit{1Sa 7, 12b}
+  \end{flushright}
+%
+% ----------------------------------------------------------
+% RESUMO
+% ----------------------------------------------------------
+%
+\pretextualchapter{Resumo}
+\referencia % linha em branco depois
+
+Texto do resumo em português.
+~\\
+
+\imprimirchaves % linha em branco antes
+%
+% ----------------------------------------------------------
+% Abstract
+% ----------------------------------------------------------
+%
+\pretextualchapter{Abstract}
+\reference % linha em branco depois
+
+Texto do resumo em inglês.
+~\\
+
+\printkeys % linha em branco antes
+%
+% ----------------------------------------------------------
+% Listas de ilustrações e tabelas
+% ----------------------------------------------------------
+%
+\listadefiguras    %\begin{figure}{largura}...\end{figure}
+\listadegraficos   %\begin{graph}{largura}...\end{graph}
+\listadequadros    %\begin{inframe}{largura}...\end{inframe}
+\listadetabelas    %\begin{table}{largura}...\end{table}
+%
+% ----------------------------------------------------------
+% Outras listas
+% ----------------------------------------------------------
+%
+\listadealgoritmos % opcional %\begin{algorithm}...\end{algorithm}
+%
+% ----------------------------------------------------------
+% Lista de abreviaturas e siglas (opcional)
+% ----------------------------------------------------------
+%
+\pretextualchapter{Lista de abreviaturas e siglas}
+    \abreviatura{sigla 1}{por extenso}
+    \abreviatura{sigla 2}{por extenso}
+    \abreviatura{sigla 3}{por extenso}
+%
+% ----------------------------------------------------------
+% Lista de simbolos (opcional)
+% ----------------------------------------------------------
+%
+\pretextualchapter{Lista de símbolos}
+    \simbolo{$simbolo 1$}{significado e/ou valor}
+    \simbolo{$simbolo 2$}{significado e/ou valor}
+    \simbolo{$simbolo 3$}{significado e/ou valor}
+%
+% ----------------------------------------------------------
+% Sumario
+% ----------------------------------------------------------
+%
+\sumario
+%
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+% ELEMENTOS TEXTUAIS
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\mainmatter % inicia a área de desenvolvimento do conteúdo
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+\include{introducao}
+
+\include{pso}
+
+\include{plataforma}
+
+\include{implementacao}
+
+%----------------------------------------------------------------
+\subsection{Título da subseção}
+%----------------------------------------------------------------
+
+Texto da subseção
+
+%----------------------------------------------------------------
+\subsubsection{Título da subsubseção}
+%----------------------------------------------------------------
+
+Texto da subsubseção
+
+%================================================================
+\chapter*{Conclusão}
+%================================================================
+
+Texto da conclusão.
+
+%\index{Introdução!Capítulo}.
+
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+% ELEMENTOS POS-TEXTUAIS
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\backmatter % inicia a área dos elementos pós-textuais
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+%===========================================================
+% Referencias via BibTeX
+%===========================================================
+
+\citeoption{abnt-options4}
+\bibliography{abnt-options4,bibliografia}
+% \bibliographystyle{abntex2-num}
+% \bibliography{bibliografia}
+
+%===========================================================
+\postextualchapter*{Glossário} % elemento opcional
+%===========================================================
+
+\definicao{termo 1}{significado}
+\definicao{termo 2}{significado}
+\definicao{termo 3}{significado}
+
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+% Apêndices (opcionais)
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\appendix % inicia os apêndices
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+%===========================================================
+\postextualchapter{Primeiro apêndice}
+%===========================================================
+
+% ----------------------------------------------------------
+\section{Primeira seção}
+% ----------------------------------------------------------
+
+Texto da primeira seção.
+
+% ----------------------------------------------------------
+\subsection{Primeira subseção}
+% ----------------------------------------------------------
+
+Texto da primeira subseção.
+
+% ----------------------------------------------------------
+\subsubsection{Primeira subsubseção}
+% ----------------------------------------------------------
+
+Texto da primeira subsubseção.
+
+%===========================================================
+\postextualchapter{Segundo apêndice}
+%===========================================================
+
+% ----------------------------------------------------------
+\section{Primeira seção}
+% ----------------------------------------------------------
+
+Texto da primeira seção.
+
+% ----------------------------------------------------------
+\subsection{Primeira subseção}
+% ----------------------------------------------------------
+
+Texto da primeira subseção.
+
+% ----------------------------------------------------------
+\subsubsection{Primeira subsubseção}
+% ----------------------------------------------------------
+
+Texto da primeira subsubseção.
+
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+% Anexos (opcionais)
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\annex % inicia os anexos
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+%===========================================================
+\postextualchapter{Primeiro anexo}
+%===========================================================
+
+% ----------------------------------------------------------
+\section{Primeira seção}
+% ----------------------------------------------------------
+
+Texto da primeira seção.
+
+% ----------------------------------------------------------
+\subsection{Primeira subseção}
+% ----------------------------------------------------------
+
+Texto da primeira subseção.
+
+% ----------------------------------------------------------
+\subsubsection{Primeira subsubseção}
+% ----------------------------------------------------------
+
+Texto da primeira subsubseção.
+
+%===========================================================
+\postextualchapter{Segundo anexo}
+%===========================================================
+
+% ----------------------------------------------------------
+\section{Primeira seção}
+% ----------------------------------------------------------
+
+Texto da primeira seção.
+
+% ----------------------------------------------------------
+\subsection{Primeira subseção}
+% ----------------------------------------------------------
+
+Texto da primeira subseção.
+
+% ----------------------------------------------------------
+\subsubsection{Primeira subsubseção}
+% ----------------------------------------------------------
+
+Texto da primeira subsubseção.
+
+%/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+\end{document}
+%/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
