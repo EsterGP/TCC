@@ -19,8 +19,17 @@ Texto da seção
 %----------------------------------------------------------------
 
 Nesta seção apresentaremos os resultados das execuções do algoritmo PSO na plataforma Memphis.
-A coluna “Nº de elementos processadores” se refere à quantidade do mestre somado aos processadores escravos, exceto ao que se refere com 1 que é o algoritmo serial. Já a coluna “Tempo algoritmo (ticks)” se refere ao tempo de execução do algoritmo somente com o tempo em ticks, cada tick equivale a 10µs. A coluna “Tempo plataforma (ticks)” se refere ao tempo do algoritmo somado ao tempo da preparação da plataforma. A coluna “Speedup”
-Nas tabelas abaixo estão os valores de cada execução do algoritmo na plataforma Memphis variando a população e as interações:
+A coluna “Nº de elementos processadores” se refere à quantidade do mestre somado aos processadores escravos, exceto ao que se refere com 1 que é o algoritmo serial. Já a coluna “Tempo algoritmo (ticks)” se refere ao tempo de execução do algoritmo somente com o tempo em ticks, cada tick equivale a 10µs. A coluna “Tempo plataforma (ticks)” se refere ao tempo do algoritmo somado ao tempo da preparação da plataforma. A coluna “Speedup”...
+
+Lei de Amdahl
+
+\begin{align}
+    &G=\frac{1}{S+\frac{1-S}{n}}
+\end{align}
+
+Nas tabelas \ref{cenario1} a \ref{cenario20} estão os valores de cada execução do algoritmo na plataforma Memphis variando a população e as interações:
+
+citando o gráfico \ref{cenario1a5}
 
 %-------------------------------------------------------------------------
 %                               TABELAS
@@ -32,7 +41,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 100 e 20 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario1}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -51,7 +60,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 200 e 20 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario2}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -70,7 +79,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 300 e 20 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario3}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -89,7 +98,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 400 e 20 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario4}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -108,7 +117,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 500 e 20 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario5}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -131,7 +140,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 100 e 30 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario6}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -150,7 +159,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 200 e 30 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario7}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -169,7 +178,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 300 e 30 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario8}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -188,7 +197,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 400 e 30 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario9}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -207,7 +216,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 500 e 30 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario10}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -230,7 +239,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 100 e 40 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario11}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -249,7 +258,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 200 e 40 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario12}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -268,7 +277,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 300 e 40 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario13}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -287,7 +296,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 400 e 40 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario14}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -306,7 +315,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 500 e 40 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario15}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -329,7 +338,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 100 e 50 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario16}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -348,7 +357,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 200 e 50 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario17}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -367,7 +376,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 300 e 50 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario18}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -386,7 +395,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 400 e 50 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario19}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -405,7 +414,7 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{table}[h]{12cm}
     \caption{Cenário de teste com população igual a 500 e 50 iterações}
-    \label{tbl:taylor-vortex-parameters}
+    \label{cenario20}
     \begin{tabular}{llll}
         \hline
         \shortstack[l]{Nº de elementos \\ processadores} & \shortstack[l]{Tempo algoritmo \\ (ticks)} & \shortstack[l]{Tempo plataforma \\ (ticks)} & Speedup \\
@@ -428,21 +437,25 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 
 \begin{graph}[h]{16cm}
     \caption{Cenário de teste com 20 iterações}
+    \label{cenario1a5}
         \includegraphics[width=14cm]{graficos/Speedup para iteração igual a 20.pdf}
 \end{graph}
 
 \begin{graph}[h]{16cm}
     \caption{Cenário de teste com 30 iterações}
+    \label{cenario6a10}
         \includegraphics[width=14cm]{graficos/Speedup para iteração igual a 30.pdf}
 \end{graph}
 
 \begin{graph}[h]{16cm}
     \caption{Cenário de teste com 40 iterações}
+    \label{cenario11a15}
         \includegraphics[width=14cm]{graficos/Speedup para iteração igual a 40.pdf}
 \end{graph}
 
 \begin{graph}[h]{16cm}
     \caption{Cenário de teste com 50 iterações}
+    \label{cenario16a20}
     \includegraphics[width=14cm]{graficos/Speedup para iteração igual a 50.pdf}
 \end{graph}
 
@@ -454,9 +467,3 @@ Nas tabelas abaixo estão os valores de cada execução do algoritmo na platafor
 %    \label{fig:2elem}
 %  \end{center}
 %\end{figure}
-
-Lei de Amdahl
-
-\begin{align}
-    &G=\frac{1}{S+\frac{1-S}{n}}
-\end{align}
